@@ -1,5 +1,16 @@
 # rastreo
 
+
+Live preview (Google Cloud)
+
+
+https://sintrafico.uc.r.appspot.com/
+
+user: admin
+pass: test12345
+
+
+
 Requisitos
 
 Python => 3.6

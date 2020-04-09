@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rastreo Vehicular</title>
+            <link rel="stylesheet" href="{% static 'easyzoom/css/easyzoom.css' %}" />
+            <link rel="stylesheet" href="{% static 'mapbox/mapbox.css' %}" />
+
+            <script src="{% static 'easyzoom/dist/easyzoom.js' %}"></script>
+            <script src="{% static 'mapbox/mapbox.js' %}"></script>
+            <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+            <script src="{% static 'inicio.js' %}"></script>
+            <style>
+                body {
+                    margin: 0;
+                    padding: 0;
+                }
+            
+                #map-container {
+                    position: relative;
+                    height: 800px;
+                    width: 100%;
+                }
+            
+                #map {
+                    position: relative;
+                    height: inherit;
+                    width: inherit;
+                }
+                .readonly-without-back{
+                    background: white !important;
+                }
+                .top-modal {
+                    background-color: #ddb029;
+                }
+            
+                .marker {
+                    background-size: cover;
+                    width: 50px;
+                    height: 50px;
+                    cursor: pointer;
+                    position: absolute;
+                }
+            
+                .mapboxgl-popup {
+                    /* background-color: #ddb029; */
+                    max-width: 200px;
+                    background-color: rgba(255, 255, 255, 0.75);
+                }
+            
+                .mapboxgl-popup-close-button {
+                    content: 'x';
+                    color: #fff;
+                    font-weight: 300;
+                    font-family: Arial, sans-serif;
+                    float: right;
+                    background-color: #ff5c5c;
+                    border: 1px solid #e33e41;
+                    border-radius: 50%;
+                    display: inline-block;
+                }
+            
+                .mapboxgl-popup-content {
+                    text-align: center;
+                    font-family: 'Open Sans', sans-serif;
+                }
+            </style>
+
+    </head>
+    <body>
+
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
+
+    </body>
+</html>

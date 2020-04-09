@@ -3,13 +3,7 @@
 <html>
     <head>
         <title>Rastreo Vehicular</title>
-            <link rel="stylesheet" href="{% static 'easyzoom/css/easyzoom.css' %}" />
             <link rel="stylesheet" href="{% static 'mapbox/mapbox.css' %}" />
-
-            <script src="{% static 'easyzoom/dist/easyzoom.js' %}"></script>
-            <script src="{% static 'mapbox/mapbox.js' %}"></script>
-            <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
-            <script src="{% static 'inicio.js' %}"></script>
             <style>
                 body {
                     margin: 0;
@@ -65,13 +59,70 @@
                     font-family: 'Open Sans', sans-serif;
                 }
             </style>
-
+            <script src="{% static 'mapbox/mapbox.js' %}"></script>
+            <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+            <script src="{% static 'inicio.js' %}"></script>
     </head>
     <body>
 
         <div id="map-container">
             <div id="map"></div>
         </div>
-
+        <!-- <div class="modal" id="modalVehiculo">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header top-modal">
+                        <h4 class="modal-title">Información de vehiculo</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <div class="row">
+                                    <div class="col-sm-10 col-md-offset-1">
+                                        <div class="form-group">
+                                            <label for="nombre">
+                                                Identificador:
+                                            </label>
+                                            <p id="identificador"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-10 col-md-offset-1">
+                                        <div class="form-group">
+                                            <label for="estado">
+                                                Placas:
+                                            </label>
+                                            <p id="placas"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5 col-md-offset-1">
+                                        <div class="form-group">
+                                            <label for="direccion">
+                                                Latitud:
+                                            </label>
+                                            <p id="lat"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-md-offset-1">
+                                        <div class="form-group">
+                                            <label for="direccion">
+                                                Longitud:
+                                            </label>
+                                            <p id="lng"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
     </body>
 </html>

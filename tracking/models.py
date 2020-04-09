@@ -8,6 +8,8 @@ class Vehiculo(models.Model):
     identificador = models.CharField(
         max_length=255,
         null=True,
+        unique=True,
+        default="0"
     )
     placas = models.CharField(
         max_length=255,

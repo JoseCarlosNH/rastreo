@@ -1,30 +1,49 @@
 # rastreo
 
 Requisitos
+
 Python => 3.6
+
 pip => 20
+
 curl = > 7.5
+
 
 
 Instalación
 
+
 "abrir terminal"
+
 git clone https://github.com/JoseCarlosNH/rastreo.git
+
 cd rastreo
+
 pip install -r requirements.txt
+
 nota: revisar que la carperta migrations SOLO tenta un archivo __init__.py
+
 python manage.py makemigrations
+
 python manege.py migrate
+
 python manage.py createsuperuser
+
   "Colocar usuario y contraseña"
+  
 python manage.py runserver 
 
+
 Abrir navegador
+
 http://127.0.0.1:8000/
 
 
 
+
+
 Ejemplos con CURL
+
 
 Crear un nuevo vehiculo
 
@@ -38,6 +57,7 @@ Respuesta esperada:
 
 
 
+
 Actualizar un nuevo vehiculo
 
 Cambiar los datos y agregar el id o pk al final de la ruta "http://localhost:8000/api/vehiculo/11/" en este ejemplo es la 11.
@@ -48,6 +68,7 @@ curl -X PUT -u user:password --data "identificador=504&placas=XEUlala&lat=18.454
 
 Respuesta esperada:
 {"pk":11,"identificador":"504","placas":"XEUlala","lat":"18.454654650000000","lng":"-93.549849400000000","created_by":1,"created_date":"2020-04-09T19:26:55.7714}
+
 
 
 

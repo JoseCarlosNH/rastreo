@@ -25,7 +25,7 @@ SECRET_KEY = 'f7ws#$^%qcy9x4%p+f^j+0c-*v5p=0&18hr@)wj4f$f5d0!1%d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sintrafico.uc.r.appspot.com', 'localhost', ]
 
 LOGIN_REDIRECT_URL = ''
 LOGIN_URL = '/admin/login/'
@@ -83,12 +83,35 @@ WSGI_APPLICATION = 'rastreo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if os.getenv('GAE_APPLICATION', None):
+    # Running on production App Engine, so connect to Google Cloud SQL using
+    # the unix socket at /cloudsql/<your-cloudsql-connection string>
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '/cloudsql/sintrafico:us-central1:dbtest',
+            'USER': 'test',
+            'PASSWORD': 'test12345',
+            'NAME': 'db',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+            'NAME': 'db',
+            'USER': 'test',
+            'PASSWORD': 'test12345',
+        }
+    }
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.sqlite3',
+    #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #     }
+    # }
 
 
 # Password validation
